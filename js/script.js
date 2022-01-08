@@ -65,15 +65,12 @@ function playRound(playerSelection, computerSelection)
 
 function game()
 {
-    while ( global_playerwins != 5 || global_computerwins != 5 )
-    {
         computerSelection = computerPlay();
         playerSelection = (prompt("Choose your weapon:")).toLowerCase();
         result = playRound(playerSelection,computerSelection);
         console.log(result);
         console.log(`Player Win Count: ${global_playerwins}`);
         console.log(`Computer Win Count: ${global_computerwins}`);
-    }
 }
 
 
