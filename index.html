@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<htmk lang="en">
+<html lang="en">
     <head>
         <title>Rock Paper Scissors</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/script.js" defer></script>
     </head>
     <body>
-        <button class="Rock">Rock</button>
-        <button class="Paper">Paper</button>
-        <button class="Scissor">Scissors</button>
-        <div class="Result">Result: </div>
-        <div class="PlayerWin">Player Win Count: </div>
-        <div class="ComputerWin">Computer Win Count: </div>
+        <div class="container">
+            <section class="Buttons">
+                <button class="Button" value="rock">Rock</button>    <!-- class = "Button rock" will create problems in Javascript as we are sending as argument button.classname --> 
+                <button class="Button" value="paper">Paper</button>
+                <button class="Button" value="scissor">Scissors</button>
+            </section>
+    
+            <section class="Display">
+                <div class="Result">Result: </div>
+                <div class="Wins">
+                    <div class="PlayerWin">Player Win Count: </div>
+                    <div class="ComputerWin">Computer Win Count: </div>
+                </div>
+            </section>
+        </div>
     </body>
 </html>
