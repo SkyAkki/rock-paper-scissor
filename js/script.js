@@ -63,6 +63,13 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
+function disableGame()
+{
+    buttons.forEach(elem => {                                                   //copied this logic from someone's project though
+        elem.disabled = true
+    })
+}
+
 function populateResult(result)
 {
     const resultDiv = document.querySelector(".Result");
@@ -72,6 +79,17 @@ function populateResult(result)
     resultDiv.textContent = `Result : ${result}`;
     playerWinDiv.textContent = `Player Win Count: ${global_playerwins}`;
     computerWinDiv.textContent = `Computer Win Count: ${global_computerwins}`;
+
+    if (global_computerwins == 5)
+    {
+        resultDiv.textContent = "You lost to a computer in a tic-tac-toe match. Let that sink in."
+        disableGame();
+    }
+    else if (global_playerwins == 5)
+    {
+        resultDiv.textContent = "Good job beating a computer in a tic-tac-toe match. HurRaY!"
+        disableGame();
+    }
 }
 
 function game(className)
@@ -86,8 +104,9 @@ let global_playerwins;
 let global_computerwins;
 global_computerwins = 0;
 global_playerwins = 0;
+
 const buttons = document.querySelectorAll('button');
-buttons.forEach(button => button.addEventListener("click", function()
-{
-   game(button.className);
+buttons.forEach(button => button.addEventListener("click", function()   // this section of the code was the most troublesome... and bringing this forEach out to
+{                                                                       // global scope is what took multiple days to figure out. 
+    game(button.className);
 }))
