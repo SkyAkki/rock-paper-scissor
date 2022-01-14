@@ -1,0 +1,30 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+.Buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+}
+.Button {
+padding: 50px;
+font-size: large;
+}
+.Display {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    flex-basis: 100%;
+}
+.Wins {
+    display: flex;
+    gap:400px;
+    justify-content: space-evenly;
+}
