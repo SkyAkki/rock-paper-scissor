@@ -63,16 +63,23 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
+function populateResult(result)
+{
+    const resultDiv = document.querySelector(".Result");
+    const playerWinDiv = document.querySelector(".PlayerWin");
+    const computerWinDiv = document.querySelector(".ComputerWin");
+
+    resultDiv.textContent = `Result : ${result}`;
+    playerWinDiv.textContent = `Player Win Count: ${global_playerwins}`;
+    computerWinDiv.textContent = `Computer Win Count: ${global_computerwins}`;
+}
 
 function game(className)
 {
-        computerSelection = computerPlay();
-        playerSelection = className.toLowerCase();
-        //playerSelection = document.getElementsByClassName(playerSelectedClass.c);
-        result = playRound(playerSelection,computerSelection);
-        console.log(result);
-        console.log(`Player Win Count: ${global_playerwins}`);
-        console.log(`Computer Win Count: ${global_computerwins}`);
+    computerSelection = computerPlay();
+    playerSelection = className.toLowerCase();
+    result = playRound(playerSelection,computerSelection);
+    populateResult(result);
 }
 
 let global_playerwins;
