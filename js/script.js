@@ -63,19 +63,24 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
-function game()
+
+function game(className)
 {
         computerSelection = computerPlay();
-        playerSelection = (prompt("Choose your weapon:")).toLowerCase();
+        playerSelection = className.toLowerCase();
+        //playerSelection = document.getElementsByClassName(playerSelectedClass.c);
         result = playRound(playerSelection,computerSelection);
         console.log(result);
         console.log(`Player Win Count: ${global_playerwins}`);
         console.log(`Computer Win Count: ${global_computerwins}`);
 }
 
-
 let global_playerwins;
 let global_computerwins;
 global_computerwins = 0;
 global_playerwins = 0;
-game();
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener("click", function()
+{
+   game(button.className);
+}))
