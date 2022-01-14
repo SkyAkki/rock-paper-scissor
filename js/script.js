@@ -108,5 +108,5 @@ global_playerwins = 0;
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener("click", function()   // this section of the code was the most troublesome... and bringing this forEach out to
 {                                                                       // global scope is what took multiple days to figure out. 
-    game(button.className);
+    game(button.value);
 }))
