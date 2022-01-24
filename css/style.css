@@ -1,5 +1,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #555555;
+    background-color: #ffd467;
 }
 .container {
     display: flex;
@@ -12,8 +14,12 @@ body {
     flex-basis: 100%;
 }
 .Button {
-padding: 50px;
-font-size: large;
+    padding: 50px;
+    font-size: large;
+    color: inherit;
+    background-color: #c977b5;
+    box-shadow: 0 0px 50px 0 rgba(0,0,0,.5);
+    border: 0px;
 }
 .Display {
     display: flex;
@@ -27,4 +33,9 @@ font-size: large;
     display: flex;
     gap:400px;
     justify-content: space-evenly;
+}
+.disabled {
+    background-color: plum;
+    opacity: 0.8;
+    cursor: not-allowed;
 }
