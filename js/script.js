@@ -65,7 +65,7 @@ function playRound(playerSelection, computerSelection)
 
 function disableGame()
 {
-    buttons.forEach(elem => {                                                   //copied this logic from someone's project though
+    buttons.forEach(elem => {                     //copied this logic from someone's project though
         elem.disabled = true
         elem.classList.add("disabled")
     })

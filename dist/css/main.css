@@ -13,6 +13,7 @@
   font-family: sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .welcome {
@@ -64,6 +65,14 @@
           perspective: 600px;
 }
 
+.card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
 .card__face--front {
   display: -ms-grid;
   display: grid;
@@ -94,14 +103,6 @@
 .hero-inner.is-flipped {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-}
-
-.card__face {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 li > span {
@@ -176,5 +177,91 @@ button::after {
   line-height: 0px;
   top: 5px;
   left: -10px;
+}
+
+svg {
+  width: 20%;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.container {
+  background: #ed3c1f;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ed3c1f), color-stop(20%, #ebe1ce));
+  background: linear-gradient(180deg, #ed3c1f 0%, #ebe1ce 20%);
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.letsplay {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.interface {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  -webkit-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+
+.interface > h1 {
+  grid-column: 1/-1;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 3rem;
+}
+
+.interface > .playerSelection {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border: 1px #5d5b5b solid;
+}
+
+.interface > .computerSelection {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4/7;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.Buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Button > img {
+  width: 100px;
+  height: auto;
+}
+
+.buttonforplayers {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
 }
 /*# sourceMappingURL=main.css.map */

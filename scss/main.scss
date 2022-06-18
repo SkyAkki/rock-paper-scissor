@@ -28,6 +28,7 @@ $font-weights : (
     font-size: 1vw;
     font-family: sans-serif;
     box-sizing: border-box;
+    scroll-behavior:smooth
 }
 
 
@@ -64,6 +65,12 @@ $font-weights : (
     transform-style: preserve-3d;
     perspective: 600px;
 }
+.card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
 .card__face--front {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -80,12 +87,6 @@ $font-weights : (
 .hero-inner.is-flipped {
     transform: rotateY(180deg);
   }
-.card__face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-}
 
 
 //Increase Emoji Size
@@ -152,4 +153,55 @@ button::after {
     left: -10px;
 }
 
+svg {
+    width: 20%;
+    align-self: end;
+    justify-self: center;
+}
+
 //Landing Page Ends--------------------------------------------------------------------------->
+
+
+.container {
+    background: rgb(237,60,31);
+    background: linear-gradient(180deg, rgba(237,60,31,1) 0%, rgba(235,225,206,1) 20%); 
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.letsplay {
+    align-self: center;
+}
+.interface {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-content: center;
+    gap: 10px;
+    transition: opacity 2s linear;
+}
+.interface > h1 {
+    grid-column: 1/-1;
+    justify-self: center;
+    font-size: 3rem;
+}
+.interface > .playerSelection {
+    grid-column: 1/4;
+    justify-self: center;
+    border: 1px $black-75 solid;
+}
+.interface > .computerSelection {
+    grid-column: 4/7;
+    justify-self: center;
+}
+.Buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.Button > img {
+    width: 100px;
+    height: auto;
+}
+.buttonforplayers {
+    grid-column: 1/4;
+}

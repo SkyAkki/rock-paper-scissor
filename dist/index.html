@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../dist/css/main.css">
-        <script src="script.js" defer></script>
+        <script src="flip.js" defer></script>
+        <script src="../js/script.js" defer></script>
     </head>
     <body>
         <main class="welcome">
@@ -18,6 +19,11 @@
                         <button class="rules">Rules</button>
                         <span class="hiragana">じゃんけん</span>
                         <button class="trivia">Trivia</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill=#ED3C1F viewBox="0 0 16 16">
+                            <a xlink:href="#container">
+                                <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"/>
+                            </a>
+                        </svg>
                     </div>
                     <div class="card__face--back card__face">
                         <ol class="rule-list">
@@ -37,20 +43,31 @@
                 </div>
             </div>
         </main>
-        <div class="container">
-            <section class="Buttons">
-                <button class="Button" value="rock">Rock</button>    <!-- class = "Button rock" will create problems in Javascript as we are sending as argument button.classname --> 
-                <button class="Button" value="paper">Paper</button>
-                <button class="Button" value="scissor">Scissors</button>
-            </section>
-    
-            <section class="Display">
-                <div class="Result">Result: </div>
-                <div class="Wins">
-                    <div class="PlayerWin">Player Win Count: </div>
-                    <div class="ComputerWin">Computer Win Count: </div>
-                </div>
-            </section>
+        <div class="container" id="container">
+            <button class="letsplay">Lets Play</button>
+            <main class="interface">
+                <h1>Cue Area</h1>
+                <img alt="Player's Choice" src="../images/rock.png" class="playerSelection" height="400px" width="400px">
+                <img alt="Computer's Choice" class="computerSelection" height="400px" width="400px">
+                <section class="Buttons buttonforplayers">
+                    <button class="Button playerButton" value="rock">
+                        <img src="../images/rock.png">
+                    </button>    <!-- class = "Button rock" will create problems in Javascript as we are sending as argument button.classname --> 
+                    <button class="Button playerButton" value="paper">
+                        <img src="../images/paper.png">
+                    </button>
+                    <button class="Button playerButton" value="scissor">
+                        <img src="../images/scissor.png">
+                    </button>   
+                </section>       
+                <section class="Display">
+                    <div class="Result">Result: </div>
+                    <div class="Wins">
+                        <div class="PlayerWin">Player Win Count: </div>
+                        <div class="ComputerWin">Computer Win Count: </div>
+                    </div>
+                </section>
+            </main>
         </div>
     </body>
 </html>
