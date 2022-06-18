@@ -7,16 +7,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/normalize.css">
         <link rel="stylesheet" href="../dist/css/main.css">
-        <script src="../js/script.js" defer></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <main class="welcome">
             <div class="hero-outer">
                 <div class="hero-inner">
-                    <span class="title">Janken</span>
-                    <button>Rules</button>
-                    <span class="hiragana">じゃんけん</span>
-                    <button class="trivia">Trivia</button>
+                    <div class="card__face--front card__face">
+                        <span class="title">Janken</span>
+                        <button class="rules">Rules</button>
+                        <span class="hiragana">じゃんけん</span>
+                        <button class="trivia">Trivia</button>
+                    </div>
+                    <div class="card__face--back card__face">
+                        <ol class="rule-list">
+                            <li>Click on Let's Play</li>
+                            <li><b>Shaisho wa guu</b> is your cue to 
+                                get ready.</li>
+                            <li>Make your choice on <b>Jan Ken</b></li>
+                            <li>Make sure to select before <b>Pon</b></li>
+                        </ol>
+                        <ol class="trivia-list">
+                            <li>Rock in Japanese is 岩 (Iwa). In Janken we say Guu.<span> &#9994;&#127997;</span></li>
+                            <li>Paper in Japanese is 紙 (Kami). In Janken we say Paa.<span> &#9995;&#127997;</span></li>
+                            <li>Scissors in Japanese is 鋏 (Hasami). In Janken we say Choki.<span> &#9996;&#127997;</span></li>
+                        </ol>
+                        <button class="back">Back</button>
+                    </div>
                 </div>
             </div>
         </main>

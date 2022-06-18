@@ -22,12 +22,16 @@ $font-weights : (
     font-family: Medium;
     src: url(/fonts/NotoSansJP-Medium.otf);
 }
+
+//Root Style
 :root{
     font-size: 1vw;
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
+
+//Landing Page Starts--------------------------------------------------------------------------->
 .welcome {
     background-color: $primary-color;
     display : flex;
@@ -47,21 +51,61 @@ $font-weights : (
     display: flex;
     justify-content: center;
 }
+
+//Styles for Card flip
 .hero-inner {
     background-color: $secondary-color;
     height: 80%;
     width: 90%;
     align-self: center;
     border-radius: 10px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    perspective: 600px;
+}
+.card__face--front {
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
+.card__face--back {
+    background: $secondary-color;
+    transform: rotateY( 180deg );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.hero-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+.card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+
+//Increase Emoji Size
+li > span {
+    font-size: 2em;
+}
+
+
+//Hero Section Styles
 .title {
     align-self: center;
     justify-self: center;
     font-size: 7rem;
     font-family: Medium;
 }
+.trivia {
+    align-self: start;
+}
+
+// Styles for Hiragana title in hero section
 .hiragana::before {
     content: "{";
     color: $black;
@@ -77,6 +121,9 @@ $font-weights : (
     content: "}";
     color: $black;
 }
+
+
+// Common Button Design with offset border
 button{
     align-self: center;
     justify-self: start;
@@ -91,9 +138,6 @@ button{
     border: none;
     position: relative;
 }
-.trivia {
-    align-self: start;
-}
 button::after {
     content: '';
     border-style: solid;
@@ -107,3 +151,5 @@ button::after {
     top: 5px;
     left: -10px;
 }
+
+//Landing Page Ends--------------------------------------------------------------------------->
