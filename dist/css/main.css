@@ -1,11 +1,16 @@
 @font-face {
-  font-family: Hiragana;
+  font-family: JPHiragana;
   src: url(/fonts/NotoSansJP-Bold.otf);
 }
 
 @font-face {
-  font-family: Medium;
+  font-family: JPMedium;
   src: url(/fonts/NotoSansJP-Medium.otf);
+}
+
+@font-face {
+  font-family: JPThin;
+  src: url(/fonts/NotoSansJP-Thin.otf);
 }
 
 :root {
@@ -109,6 +114,10 @@ li > span {
   font-size: 2em;
 }
 
+.trivia-list > li:nth-last-child(-n+2) {
+  line-height: 2;
+}
+
 .title {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -116,7 +125,7 @@ li > span {
   -ms-grid-column-align: center;
       justify-self: center;
   font-size: 7rem;
-  font-family: Medium;
+  font-family: JPMedium;
 }
 
 .trivia {
@@ -131,7 +140,7 @@ li > span {
 }
 
 .hiragana {
-  font-family: Hiragana;
+  font-family: JPHiragana;
   color: #ED3C1F;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
@@ -236,6 +245,9 @@ svg {
   -ms-grid-column-align: center;
       justify-self: center;
   border: 1px #5d5b5b solid;
+  width: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .interface > .computerSelection {
@@ -244,11 +256,61 @@ svg {
   grid-column: 4/7;
   -ms-grid-column-align: center;
       justify-self: center;
+  width: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.interface > .PlayerWin {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 2rem;
+  font-family: JPThin;
+}
+
+.interface > .ComputerWin {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4/7;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 2rem;
+  font-family: JPThin;
+}
+
+.interface > .Result {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4/7;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2rem;
+  color: #ED3C1F;
+  font-family: JPMedium;
+}
+
+.Buttons {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.Button {
+  font-size: 1em;
 }
 
 .Button > img {
   width: 100px;
   height: auto;
+}
+
+.Button:hover {
+  scale: 1.3;
 }
 
 .buttonforplayers {

@@ -37,6 +37,8 @@
                             <li>Rock in Japanese is 岩 (Iwa). In Janken we say Guu.<span> &#9994;&#127997;</span></li>
                             <li>Paper in Japanese is 紙 (Kami). In Janken we say Paa.<span> &#9995;&#127997;</span></li>
                             <li>Scissors in Japanese is 鋏 (Hasami). In Janken we say Choki.<span> &#9996;&#127997;</span></li>
+                            <li>最初はぐう (Saisho Wa Guu ) means "starting with rock", and cues both the player to show rock.</li>
+                            <li>あいこでしょ! (Aiko desho) means 'It's a draw, isn't it?", and on しょ (sho) both players play again.</li>
                         </ol>
                         <button class="back">Back</button>
                     </div>
@@ -45,10 +47,12 @@
         </main>
         <div class="container" id="container">
             <button class="letsplay">Lets Play</button>
-            <main class="interface">
+            <div class="interface">
                 <h1 class="word">Saisho Wa Guu</h1>
                 <img alt="Player's Choice" src="../images/rock.png" class="playerSelection" height="400px" width="400px">
                 <img alt="Computer's Choice" src="../images/rock.png" class="computerSelection" height="400px" width="400px">
+                <div class="PlayerWin">Player Win Count: </div>
+                <div class="ComputerWin">Computer Win Count: </div>
                 <section class="Buttons buttonforplayers">
                     <button class="Button playerButton" value="rock">
                         <img src="../images/rock.png">
@@ -60,14 +64,8 @@
                         <img src="../images/scissor.png">
                     </button>   
                 </section>       
-                <section class="Display">
-                    <div class="Result">Result: </div>
-                    <div class="Wins">
-                        <div class="PlayerWin">Player Win Count: </div>
-                        <div class="ComputerWin">Computer Win Count: </div>
-                    </div>
-                </section>
-            </main>
+                <div class="Result">Result: </div>
+            </div>
         </div>
     </body>
 </html>
