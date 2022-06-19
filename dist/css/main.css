@@ -244,7 +244,6 @@ svg {
   grid-column: 1/4;
   -ms-grid-column-align: center;
       justify-self: center;
-  border: 1px #5d5b5b solid;
   width: 50%;
   -o-object-fit: contain;
      object-fit: contain;
@@ -317,6 +316,7 @@ svg {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
+  width: 60%;
 }
 
 .word-move {
@@ -354,6 +354,24 @@ svg {
   }
   to {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-inner {
+    height: 60%;
+  }
+  .hero-outer {
+    height: 50vh;
+  }
+  .playerSelection {
+    height: 50vh;
+  }
+  .computerSelection {
+    height: 50vh;
+  }
+  .Button > img {
+    width: 40%;
   }
 }
 /*# sourceMappingURL=main.css.map */

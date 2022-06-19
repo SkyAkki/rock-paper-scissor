@@ -195,7 +195,6 @@ svg {
 .interface > .playerSelection {
     grid-column: 1/4;
     justify-self: center;
-    border: 1px $black-75 solid;
     width: 50%;
     object-fit: contain;
 }
@@ -240,6 +239,7 @@ svg {
 }
 .buttonforplayers {
     grid-column: 1/4;
+    width: 60%;
 }
 
 // Karaoke-text Style
@@ -247,10 +247,9 @@ svg {
     position: relative;
     white-space: nowrap;
     color: lightblue;
-    text-shadow: 0 0 3px rgba(0,0,0,1); 
-  }
-  
-  .word-move::after {
+    text-shadow: 0 0 3px rgba(0,0,0,1);
+}
+.word-move::after {
     content: attr(data-text);
     position: absolute;
     left: 0;
@@ -260,11 +259,26 @@ svg {
     width: 40%;
     animation: run-text 2s 4 linear;
     text-shadow: 0 0 3px rgba(255,255,255,1); 
-  }
-  
-  @keyframes run-text {
+}
+@keyframes run-text {
     from { width: 0 }
     to { width: 100% }
-  }
+}
 
-  
+@media (max-width : 600px) {
+    .hero-inner{
+        height: 60%;
+    }
+    .hero-outer{
+        height: 50vh;
+    }
+    .playerSelection{
+        height: 50vh;
+    }
+    .computerSelection{
+        height: 50vh;
+    }
+    .Button > img {
+        width: 40%;
+    }
+}
