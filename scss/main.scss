@@ -195,8 +195,7 @@ svg {
     justify-self: center;
 }
 .Buttons{
-    display: flex;
-    justify-content: space-around;
+    
 }
 .Button > img {
     width: 100px;
@@ -205,3 +204,28 @@ svg {
 .buttonforplayers {
     grid-column: 1/4;
 }
+
+// Karaoke-text Style
+.word-move {
+    position: relative;
+    white-space: nowrap;
+    color: lightblue;
+    text-shadow: 0 0 3px rgba(0,0,0,1); 
+  }
+  
+  .word-move::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: red;
+    overflow: hidden;
+    width: 40%;
+    animation: run-text 2s 4 linear;
+    text-shadow: 0 0 3px rgba(255,255,255,1); 
+  }
+  
+  @keyframes run-text {
+    from { width: 0 }
+    to { width: 100% }
+  }

@@ -246,14 +246,6 @@ svg {
       justify-self: center;
 }
 
-.Buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
 .Button > img {
   width: 100px;
   height: auto;
@@ -263,5 +255,43 @@ svg {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/4;
+}
+
+.word-move {
+  position: relative;
+  white-space: nowrap;
+  color: lightblue;
+  text-shadow: 0 0 3px black;
+}
+
+.word-move::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: red;
+  overflow: hidden;
+  width: 40%;
+  -webkit-animation: run-text 2s 4 linear;
+          animation: run-text 2s 4 linear;
+  text-shadow: 0 0 3px white;
+}
+
+@-webkit-keyframes run-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes run-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
