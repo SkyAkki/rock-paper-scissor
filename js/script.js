@@ -4,7 +4,7 @@ function computerPlay()
     let rand;
     let play_list = ["Rock", "Paper", "Scissor"];
     rand = Math.floor(Math.random() * 3 ) ;
-    return play_list[rand];
+    return [play_list[rand],rand];
 }
 
 
@@ -95,7 +95,16 @@ function populateResult(result)
 
 function game(className)
 {
-    computerSelection = computerPlay();
+    //take two parameters from return, selected string and the random number
+    computerReturn = computerPlay();
+    computerSelection = computerReturn[0];
+    computerIndex = computerReturn[1];
+
+    //Generate new image based on the random number each turn
+    var computerChoiceImg = document.querySelector('.computerSelection')
+    const srcArray = ['../images/rock.png','../images/paper.png','../images/scissor.png']
+    computerChoiceImg.src = srcArray[computerIndex]
+
     playerSelection = className.toLowerCase();
     result = playRound(playerSelection,computerSelection);
     populateResult(result);
