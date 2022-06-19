@@ -11,6 +11,7 @@ var play = document.querySelector('.letsplay')
 var interface = document.querySelector('.interface')
 var playerChoiceImg = document.querySelector('.playerSelection')
 var choiceArray = document.querySelectorAll('.buttonforplayers > button')
+var karaokeText = document.querySelector('.word')
 
 //Conditional Render Grid
 interface.style.visibility = 'hidden'
@@ -38,6 +39,9 @@ play.addEventListener('click', function() {
     play.hidden = true
     interface.style.visibility = 'visible'
     interface.style.opacity = 100
+
+    //Enable Karaoke Text
+    timingControl();
 })
 
 //Hover image logic
@@ -46,3 +50,22 @@ choiceArray.forEach(element => {
         playerChoiceImg.src =  element.children[0].src;
     },true)
 })
+
+//Karaoke text and timing logic
+async function timingControl() {
+    karaokeText.dataset.text = "Saisho Wa Guu"
+    karaokeText.classList.add("word-move")
+
+    setTimeout(() => {
+        karaokeText.dataset.text = "Jan"
+        karaokeText.textContent = "Jan"
+    },2000)
+    setTimeout(() => {
+        karaokeText.dataset.text = "Ken"
+        karaokeText.textContent = "Ken"
+    },4000)
+    setTimeout(() => {
+        karaokeText.dataset.text = "Pon"
+        karaokeText.textContent = "Pon"
+    },6000)
+}
